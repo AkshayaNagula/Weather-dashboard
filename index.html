@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Dashboard</h1>
+
+    <div class="search-bar">
+      <input type="text" id="cityInput" placeholder="Enter city name (e.g. London, Tokyo, New York)" />
+      <button id="searchBtn" onclick="fetchWeather()">Search</button>
+    </div>
+
+    <div id="errorMsg" class="error" style="display:none;"></div>
+    <div id="loadingMsg" class="loading" style="display:none;">Fetching weather...</div>
+
+    <div id="weatherContent" style="display:none;">
+      <div class="main-grid">
+        <div class="card hero">
+          <div>
+            <p class="city-name" id="cityName">—</p>
+            <p class="date" id="currentDate">—</p>
+            <div class="temp-big" id="currentTemp">—</div>
+            <div class="description" id="currentDesc">—</div>
+          </div>
+          <div class="weather-icon" id="currentIcon">—</div>
+        </div>
+        <div class="card">
+          <p class="label">Humidity</p>
+          <p class="value" id="humidity">—</p>
+        </div>
+        <div class="card">
+          <p class="label">Wind speed</p>
+          <p class="value" id="windSpeed">—</p>
+        </div>
+        <div class="card">
+          <p class="label">Feels like</p>
+          <p class="value" id="feelsLike">—</p>
+        </div>
+        <div class="card">
+          <p class="label">Visibility</p>
+          <p class="value" id="visibility">—</p>
+        </div>
+      </div>
+
+      <p class="section-title">5-day forecast</p>
+      <div class="forecast-grid" id="forecastGrid"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
